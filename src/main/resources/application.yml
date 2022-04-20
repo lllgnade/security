@@ -1,0 +1,25 @@
+spring:
+  mvc:
+    # jsp 뷰 파일 위치 설정
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+  # 데이터 소스 설정
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mariadb://192.168.1.20:3307/TestDB?characterEncoding=utf8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false
+    username: tester
+    password: Tester123!@#
+
+mybatis:
+  # 마이바티스 vo 패키지 위치 설정
+  type-aliases-package: com.spring.hello.vo
+
+logging:
+  # log4j 로깅 레벨 설정
+  level:
+    org.springframework.web : debug
+    sql: error
+    jdbc: off
+    jdbc.sqlonly: debug
